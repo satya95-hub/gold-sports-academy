@@ -342,10 +342,10 @@ function IconFacebook({ size = 20 }) {
 
 /* ── UPDATE THESE WHEN CLIENT PROVIDES LINKS ─────────── */
 const SOCIAL_LINKS = {
-  instagram: "https://instagram.com/",   // ← replace with real link
+  instagram: "https://www.instagram.com/gold.sportsacademy/",   // ← replace with real link
   youtube:   "https://youtube.com/",     // ← replace with real link
   facebook:  "https://facebook.com/",    // ← replace with real link
-  whatsapp:  "https://wa.me/919148873516", // ← replace with real WhatsApp link
+  whatsapp:  "https://wa.me/919148873516?text=Hi%2C%20I%20found%20Gold%20Sports%20Academy%20online.%20I%20would%20like%20to%20know%20more%20about%20your%20classes%20and%20fees.%20Please%20share%20the%20details.%20Thank%20you!", // ← replace with real WhatsApp link
 };
 
 function Cursor() {

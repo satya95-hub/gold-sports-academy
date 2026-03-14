@@ -283,11 +283,30 @@ const CSS = `
   background:linear-gradient(135deg,#c88a00,#e8a800);}
 
 /* ── FOOTER ── */
-.bd-footer{background:#0c0800;padding:clamp(22px,3vh,34px) clamp(16px,5vw,48px);
+.bd-footer{background:#0c0800;padding:clamp(28px,4vh,48px) clamp(16px,5vw,48px);
   text-align:center;border-top:1px solid rgba(232,168,0,.07);position:relative;z-index:10;}
 .bd-footer p{font-size:12px;color:rgba(255,255,255,.22);letter-spacing:.5px;line-height:2.6;}
 .bd-footer a{color:rgba(232,168,0,.4);text-decoration:none;transition:color .3s;}
 .bd-footer a:hover{color:#e8a800;}
+.bd-footer-socials{display:flex;justify-content:center;gap:10px;margin-top:16px;}
+.bd-social-btn{width:40px;height:40px;border-radius:11px;
+  background:#fff;border:1px solid rgba(255,255,255,.15);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:all .25s cubic-bezier(.25,.46,.45,.94);
+  box-shadow:0 2px 10px rgba(0,0,0,.2);}
+.bd-social-btn:hover{transform:translateY(-4px) scale(1.1);}
+.bd-social-btn:nth-child(1):hover{box-shadow:0 8px 22px rgba(214,36,159,.45);}
+.bd-social-btn:nth-child(2):hover{box-shadow:0 8px 22px rgba(255,0,0,.45);}
+.bd-social-btn:nth-child(3):hover{box-shadow:0 8px 22px rgba(24,119,242,.45);}
+@keyframes waPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}50%{box-shadow:0 0 0 12px rgba(37,211,102,0)}}
+.wa-fab{position:fixed;bottom:clamp(24px,4vh,36px);right:clamp(20px,3vw,32px);z-index:500;
+  width:58px;height:58px;border-radius:50%;background:#25D366;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  box-shadow:0 6px 24px rgba(37,211,102,.45);
+  animation:waPulse 2.4s ease-in-out infinite;
+  transition:transform .25s cubic-bezier(.25,.46,.45,.94),box-shadow .25s;}
+.wa-fab:hover{transform:scale(1.12);animation:none;box-shadow:0 12px 36px rgba(37,211,102,.6);}
+.wa-fab svg{width:32px;height:32px;}
 `;
 
 const PROGRAMS=[
@@ -506,7 +525,47 @@ export default function BadmintonPage(){
       <footer className="bd-footer">
         <p>© 2026 Gold Sports Academy · No.25, Near Bandematt Arch, BSM Layout, Kengeri, Bangalore 560060</p>
         <p>GSTIN: 29AIXPL3817F3ZP &nbsp;·&nbsp; <a href="/swimming">🏊 Swimming Classes</a> &nbsp;·&nbsp; <a href="/">← Home</a></p>
+        <div className="bd-footer-socials">
+          {/* Instagram — branded gradient */}
+          <a href="https://www.instagram.com/gold.sportsacademy/" target="_blank" rel="noopener noreferrer" className="bd-social-btn" title="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <defs>
+                <radialGradient id="bd-ig" cx="30%" cy="107%" r="150%">
+                  <stop offset="0%" stopColor="#fdf497"/>
+                  <stop offset="45%" stopColor="#fd5949"/>
+                  <stop offset="60%" stopColor="#d6249f"/>
+                  <stop offset="90%" stopColor="#285AEB"/>
+                </radialGradient>
+              </defs>
+              <rect x="2" y="2" width="20" height="20" rx="5.5" fill="url(#bd-ig)"/>
+              <circle cx="12" cy="12" r="4.2" stroke="#fff" strokeWidth="1.8" fill="none"/>
+              <circle cx="17.3" cy="6.7" r="1.1" fill="#fff"/>
+            </svg>
+          </a>
+          {/* YouTube — branded red */}
+          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="bd-social-btn" title="YouTube">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <rect x="0" y="0" width="24" height="24" rx="5" fill="#FF0000"/>
+              <path d="M19.6 8.2a1.96 1.96 0 0 0-1.38-1.39C16.9 6.5 12 6.5 12 6.5s-4.9 0-6.22.31A1.96 1.96 0 0 0 4.4 8.2C4.1 9.53 4.1 12 4.1 12s0 2.47.3 3.8a1.96 1.96 0 0 0 1.38 1.39C7.1 17.5 12 17.5 12 17.5s4.9 0 6.22-.31a1.96 1.96 0 0 0 1.38-1.39c.3-1.33.3-3.8.3-3.8s0-2.47-.3-3.8z" fill="#fff"/>
+              <polygon points="10.2,14.7 15.1,12 10.2,9.3" fill="#FF0000"/>
+            </svg>
+          </a>
+          {/* Facebook — branded blue */}
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" className="bd-social-btn" title="Facebook">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <rect x="0" y="0" width="24" height="24" rx="5" fill="#1877F2"/>
+              <path d="M16.5 8h-2c-.3 0-.5.2-.5.5V10h2.5l-.4 2.5H14V19h-2.5v-6.5H10V10h1.5V8.5C11.5 6.6 12.8 5.5 14.5 5.5c.8 0 1.6.1 2 .1V8z" fill="#fff"/>
+            </svg>
+          </a>
+        </div>
       </footer>
+
+      {/* WHATSAPP FLOATING BUTTON */}
+      <a href="https://wa.me/919148873516?text=Hi%2C%20I%20am%20interested%20in%20Badminton%20Classes%20at%20Gold%20Sports%20Academy%2C%20Kengeri.%20Could%20you%20please%20share%20the%20batch%20timings%2C%20fees%20and%20available%20slots%3F%20Thank%20you!" target="_blank" rel="noopener noreferrer" className="wa-fab" title="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
     </div>
   );
 }
