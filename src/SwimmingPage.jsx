@@ -268,6 +268,69 @@ const CSS = `
   transition:transform .25s cubic-bezier(.25,.46,.45,.94),box-shadow .25s;}
 .wa-fab:hover{transform:scale(1.12);animation:none;box-shadow:0 12px 36px rgba(37,211,102,.6);}
 .wa-fab svg{width:32px;height:32px;}
+
+/* COACH SECTION */
+@keyframes ringRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes coachGlow{0%,100%{box-shadow:0 0 0 6px rgba(0,212,232,.08),0 0 40px rgba(0,212,232,.15)}
+  50%{box-shadow:0 0 0 10px rgba(0,212,232,.12),0 0 60px rgba(0,212,232,.28)}}
+
+.coach-sec{text-align:center;}
+.coach-card{max-width:980px;margin:0 auto;
+  display:grid;grid-template-columns:260px 1fr;gap:clamp(32px,5vw,64px);
+  align-items:start;text-align:left;
+  background:linear-gradient(145deg,#001c24,#002530);
+  border:1px solid rgba(0,212,232,.25);border-radius:24px;
+  padding:clamp(28px,4vw,52px);
+  box-shadow:0 24px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(0,212,232,.15);}
+@media(max-width:720px){.coach-card{grid-template-columns:1fr;text-align:center;}}
+
+/* Photo col */
+.coach-photo-col{display:flex;flex-direction:column;align-items:center;gap:20px;}
+.coach-ring-outer{position:relative;width:200px;height:200px;flex-shrink:0;}
+.coach-ring-svg{position:absolute;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);
+  animation:ringRotate 12s linear infinite;}
+.coach-ring-inner{width:200px;height:200px;border-radius:50%;overflow:hidden;
+  border:3px solid #00d4e8;
+  animation:coachGlow 3s ease-in-out infinite;}
+/* Real photo — 1:1 square cropped to circle */
+.coach-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
+.coach-img-placeholder{width:100%;height:100%;
+  background:linear-gradient(135deg,#003d4d,#006070);
+  display:flex;align-items:center;justify-content:center;font-size:80px;}
+.coach-stats-col{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.coach-stat-pill{background:rgba(0,212,232,.12);border:1px solid rgba(0,212,232,.3);
+  border-radius:12px;padding:10px 16px;text-align:center;min-width:110px;}
+.csp-val{display:block;font-size:24px;font-weight:800;color:#00d4e8;line-height:1;}
+.csp-lbl{display:block;font-size:9px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:5px;}
+
+/* Info col */
+.coach-info-col{display:flex;flex-direction:column;gap:0;}
+.coach-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:#00d4e8;
+  background:rgba(0,212,232,.15);border:1px solid rgba(0,212,232,.35);
+  padding:5px 14px;border-radius:100px;margin-bottom:12px;width:fit-content;}
+.coach-name-big{font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(26px,3.5vw,42px);color:#ffffff;letter-spacing:-.5px;
+  line-height:1.1;margin-bottom:6px;
+  text-shadow:0 2px 20px rgba(0,212,232,.3);}
+.coach-location{font-size:12px;color:rgba(255,255,255,.55);
+  letter-spacing:.5px;margin-bottom:24px;}
+.coach-creds{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
+.coach-cred-row{display:flex;align-items:center;gap:14px;
+  background:rgba(0,0,0,.3);border:1px solid rgba(0,212,232,.18);
+  border-radius:12px;padding:12px 16px;transition:all .3s;}
+.coach-cred-row:hover{background:rgba(0,212,232,.12);border-color:rgba(0,212,232,.4);
+  transform:translateX(4px);}
+.coach-cred-icon{font-size:22px;flex-shrink:0;}
+.coach-cred-label{font-size:13px;font-weight:700;color:#ffffff;margin-bottom:2px;}
+.coach-cred-sub{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.3px;}
+.coach-linkedin-btn{display:inline-flex;align-items:center;gap:7px;
+  background:#0A66C2;color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;
+  padding:9px 18px;border-radius:8px;text-decoration:none;width:fit-content;
+  transition:all .28s;box-shadow:0 4px 14px rgba(10,102,194,.4);}
+.coach-linkedin-btn:hover{transform:translateY(-3px);background:#0854a0;
+  box-shadow:0 8px 24px rgba(10,102,194,.55);}
 `;
 
 const PROGRAMS=[
@@ -457,8 +520,7 @@ export default function App(){
       {/* ══ HERO — fullscreen slow-motion diver video ══ */}
       <section className="hero">
         <video className="hero-vid" autoPlay muted loop playsInline>
-          <source src="https://res.cloudinary.com/drrwpopud/video/upload/v1772946386/0308_mfiyqk.mp4" type="video/mp4"/>
-          <source src="https://res.cloudinary.com/drrwpopud/video/upload/v1772946386/0308_mfiyqk.mov" type="video/quicktime"/>
+          <source src="/src/assets/swim1.mp4" type="video/mp4"/>
         </video>
         <div className="hero-overlay"/>
 
@@ -564,6 +626,82 @@ export default function App(){
           </div>
         </section>
 
+        {/* COACH SECTION */}
+        <section className="sec coach-sec" id="coach" style={{paddingTop:0}}>
+          <div className="eyebrow reveal">— Meet Your Coach —</div>
+          <h2 className="sh2 reveal">The <em>Expert</em> Behind Every Stroke</h2>
+          <div className="sdiv reveal"/>
+
+          <div className="coach-card reveal">
+            {/* LEFT — photo + glow ring */}
+            <div className="coach-photo-col">
+              <div className="coach-ring-outer">
+                <div className="coach-ring-inner">
+                  <img src="/src/assets/coach_img.png" className="coach-img" alt="Lakshman HK - Head Coach Gold Sports Academy"/>
+                </div>
+                <svg className="coach-ring-svg" viewBox="0 0 200 200">
+                  <circle cx="100" cy="100" r="94" fill="none" stroke="url(#ringGrad)" strokeWidth="2.5" strokeDasharray="12 6" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#00d4e8" stopOpacity="0.8"/>
+                      <stop offset="50%" stopColor="#00d4e8" stopOpacity="0.2"/>
+                      <stop offset="100%" stopColor="#00d4e8" stopOpacity="0.8"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              {/* stat pills under photo */}
+              <div className="coach-stats-col">
+                <div className="coach-stat-pill">
+                  <span className="csp-val">310+</span>
+                  <span className="csp-lbl">Swimmers Trained</span>
+                </div>
+                <div className="coach-stat-pill">
+                  <span className="csp-val">5+</span>
+                  <span className="csp-lbl">Years Coaching</span>
+                </div>
+              </div>
+            </div>
+
+            {/* RIGHT — info */}
+            <div className="coach-info-col">
+              <div className="coach-tag">Head Coach &amp; Founder</div>
+              <div className="coach-name-big">Lakshman H K</div>
+              <div className="coach-location">📍 Gold Sports Academy, Kengeri, Bengaluru</div>
+
+              <div className="coach-creds">
+                {[
+                  { icon:"🏊", label:"Head Coach & Founder", sub:"Gold Sports Academy" },
+                  { icon:"🎓", label:"ASCA Certified Level 2", sub:"American Swimming Coaches Association" },
+                  { icon:"🌐", label:"Internationally Certified Coach", sub:"Global Swimming Standards" },
+                  { icon:"🛟", label:"Advance Lifeguarding", sub:"Certified Water Safety" },
+                  { icon:"❤️", label:"CPR Certified", sub:"Emergency Response Ready" },
+                ].map((c,i) => (
+                  <div key={i} className="coach-cred-row">
+                    <div className="coach-cred-icon">{c.icon}</div>
+                    <div>
+                      <div className="coach-cred-label">{c.label}</div>
+                      <div className="coach-cred-sub">{c.sub}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://www.linkedin.com/in/lakshman-hk-5058a43b7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="coach-linkedin-btn"
+              >
+                <svg viewBox="0 0 24 24" fill="white" width="14" height="14">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                View LinkedIn Profile ↗
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Reviews */}
         <section className="sec" id="reviews" style={{paddingTop:0}}>
           <div className="eyebrow reveal">— 310+ Reviews —</div>
@@ -594,10 +732,10 @@ export default function App(){
           <p>Join 300+ swimmers at Gold Sports Academy, Kengeri, Bangalore</p>
           <div className="cta-meta">
             <div className="cta-item">📍 No.25, Near Bandematt Arch, BSM Layout, Kengeri</div>
-            <div className="cta-item">📞 9945666663 / 914887</div>
+            <div className="cta-item">📞 9148873516 / 91488867178</div>
             <div className="cta-item">🕕 Daily 6:00 AM – 8:00 PM</div>
           </div>
-          <a href="tel:9945666663" className="enroll">📞 Enroll Now</a>
+          <a href="tel:9148873516" className="enroll">📞 Enroll Now</a>
         </div>
       </div>
 

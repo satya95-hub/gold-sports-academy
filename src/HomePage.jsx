@@ -560,8 +560,8 @@ export default function HomePage() {
               <div className="hp-map-details">
                 {[
                   { icon:"📍", label:"Address", val:"No.25, Near Bandematt Arch, BSM Layout, 7th Cross, Kengeri, Bangalore — 560060" },
-                  { icon:"📞", label:"Phone",   val:"9148873516" },
-                  { icon:"🕕", label:"Hours",   val:"Monday – Sunday · 6:00 AM – 8:00 PM" },
+                  { icon:"📞", label:"Phone",   val:"9148873516  /  91488867178" },
+                  { icon:"🕕", label:"Hours",   val:"Monday – Sunday  |  6:00 AM – 8:00 PM" },
                 ].map((d,i) => (
                   <div key={i} className="hp-map-detail hp-reveal">
                     <div className="hp-map-detail-icon">{d.icon}</div>
@@ -614,7 +614,7 @@ export default function HomePage() {
           <div className="hp-footer-left">
             <p>© 2026 <span>Gold Sports Academy</span></p>
             <p>No.25, Near Bandematt Arch, BSM Layout, Kengeri, Bangalore 560060</p>
-            <p>📞 9148873516 · GSTIN: 29AIXPL3817F3ZP</p>
+            <p>📞 9148873516 / 91488867178 · GSTIN: 29AIXPL3817F3ZP</p>
           </div>
           <div className="hp-footer-right">
             <div className="hp-footer-nav">
