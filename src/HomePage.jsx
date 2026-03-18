@@ -41,8 +41,6 @@ html{scroll-behavior:smooth;}
   padding:8px 20px;border-radius:7px;transition:all .25s;display:flex;align-items:center;gap:7px;}
 .hp-nav-link.swim{background:rgba(0,130,180,.07);color:#0072a0;border:1px solid rgba(0,130,180,.18);}
 .hp-nav-link.swim:hover{background:rgba(0,130,180,.14);border-color:rgba(0,130,180,.4);}
-.hp-nav-link.shuttle{background:rgba(184,122,0,.08);color:#8a5a00;border:1px solid rgba(184,122,0,.2);}
-.hp-nav-link.shuttle:hover{background:rgba(184,122,0,.16);border-color:#b87a00;}
 
 /* HERO */
 .hp-hero{width:100%;min-height:100vh;display:flex;flex-direction:column;
@@ -86,21 +84,21 @@ html{scroll-behavior:smooth;}
   padding:clamp(12px,1.4vw,15px) clamp(24px,3vw,38px);border-radius:8px;
   text-decoration:none;transition:all .28s;box-shadow:0 6px 22px rgba(0,100,150,.25);}
 .hp-cta-swim:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,100,150,.35);}
-.hp-cta-shuttle{display:inline-flex;align-items:center;gap:8px;
   background:linear-gradient(135deg,#8a5a00,#c88a00);color:#fff;
   font-size:clamp(11px,1vw,13px);font-weight:700;letter-spacing:.5px;
   padding:clamp(12px,1.4vw,15px) clamp(24px,3vw,38px);border-radius:8px;
   text-decoration:none;transition:all .28s;box-shadow:0 6px 22px rgba(140,90,0,.25);}
-.hp-cta-shuttle:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(140,90,0,.35);}
 
 /* Stats */
-.hp-hero-stats{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;
+.hp-hero-stats{display:inline-flex;flex-direction:row;align-items:center;
+  flex-wrap:nowrap;justify-content:center;
   animation:fadeUp .85s ease .8s both;}
-.hp-stat{text-align:center;padding:0 clamp(20px,3.5vw,48px);}
-.hp-stat-n{font-size:clamp(22px,3vw,38px);font-weight:800;color:#8a5a00;letter-spacing:-1px;line-height:1;white-space:nowrap;}
+.hp-stat{text-align:center;padding:0 clamp(16px,2.8vw,44px);flex-shrink:0;}
+.hp-stat-n{font-size:clamp(20px,2.8vw,38px);font-weight:800;color:#8a5a00;
+  letter-spacing:-1px;line-height:1;white-space:nowrap;}
 .hp-stat-l{font-size:clamp(9px,.85vw,10px);font-weight:500;letter-spacing:2px;
   text-transform:uppercase;color:rgba(26,18,0,.35);margin-top:4px;white-space:nowrap;}
-.hp-stat-sep{width:1px;height:32px;background:rgba(184,122,0,.2);flex-shrink:0;}
+.hp-stat-sep{width:1px;height:32px;background:rgba(184,122,0,.2);flex-shrink:0;align-self:center;}
 
 /* Scroll hint */
 .hp-scroll{position:absolute;bottom:clamp(20px,4vh,36px);left:50%;transform:translateX(-50%);
@@ -120,19 +118,18 @@ html{scroll-behavior:smooth;}
 
 /* SPORT CARDS */
 .hp-cards-wrap{padding:clamp(60px,8vh,100px) clamp(24px,4vw,60px);background:#faf8f4;}
-.hp-cards-header{display:flex;align-items:flex-end;justify-content:space-between;
-  max-width:1300px;margin:0 auto clamp(32px,4vh,52px);}
+.hp-cards-header{display:flex;flex-direction:column;align-items:center;text-align:center;
+  max-width:640px;margin:0 auto clamp(32px,4vh,52px);}
 .hp-cards-eyebrow{font-size:10px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:#8a5a00;margin-bottom:10px;}
 .hp-cards-heading{font-family:'Inter',sans-serif;font-weight:900;
-  font-size:clamp(28px,4vw,52px);color:#1a1200;letter-spacing:-1.5px;line-height:1;}
-.hp-cards-sub{font-size:13px;color:rgba(26,18,0,.38);max-width:260px;text-align:right;line-height:1.7;}
+  font-size:clamp(28px,4vw,52px);color:#1a1200;letter-spacing:-1.5px;line-height:1;margin-bottom:12px;}
+.hp-cards-sub{font-size:13px;color:rgba(26,18,0,.38);max-width:340px;text-align:center;line-height:1.7;}
 .hp-cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,20px);
   max-width:1300px;margin:0 auto;}
 @media(max-width:720px){.hp-cards-grid{grid-template-columns:1fr;}}
 .hp-card{position:relative;height:clamp(400px,52vh,580px);overflow:hidden;
   text-decoration:none;display:block;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.08);}
 .hp-card-swim .hp-card-bg{background:linear-gradient(160deg,#04111e 0%,#003050 45%,#005f8a 75%,#00a0c8 100%);}
-.hp-card-shuttle .hp-card-bg{background:linear-gradient(160deg,#1a1000 0%,#3d2400 45%,#8a5200 75%,#c88a00 100%);}
 .hp-card-bg{position:absolute;inset:0;transition:transform .7s cubic-bezier(.25,.46,.45,.94);}
 .hp-card:hover .hp-card-bg{transform:scale(1.04);}
 .hp-card-grad{position:absolute;inset:0;
@@ -146,7 +143,6 @@ html{scroll-behavior:smooth;}
   display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.6);
   font-size:15px;transition:all .3s;backdrop-filter:blur(8px);}
 .hp-card-swim:hover .hp-card-arrow{background:#00b4d8;color:#fff;border-color:#00b4d8;}
-.hp-card-shuttle:hover .hp-card-arrow{background:#e8a800;color:#1a0f00;border-color:#e8a800;}
 .hp-card-content{position:absolute;bottom:0;left:0;right:0;padding:clamp(24px,3vw,36px);}
 .hp-card-icon{font-size:clamp(38px,5vw,56px);display:block;margin-bottom:10px;transition:transform .4s ease;}
 .hp-card:hover .hp-card-icon{transform:translateY(-8px);}
@@ -161,10 +157,6 @@ html{scroll-behavior:smooth;}
 .hp-card-swim:hover .hp-card-cta{color:#00b4d8;}
 .hp-card-swim .hp-card-cta-line{background:#00b4d8;}
 .hp-card-swim:hover .hp-card-cta-line{width:44px;}
-.hp-card-shuttle .hp-card-cta{color:rgba(232,168,0,.5);}
-.hp-card-shuttle:hover .hp-card-cta{color:#e8a800;}
-.hp-card-shuttle .hp-card-cta-line{background:#e8a800;}
-.hp-card-shuttle:hover .hp-card-cta-line{width:44px;}
 
 /* STATS STRIP */
 .hp-strip{background:#f0ead8;
@@ -342,8 +334,8 @@ function IconFacebook({ size = 20 }) {
 
 /* ── UPDATE THESE WHEN CLIENT PROVIDES LINKS ─────────── */
 const SOCIAL_LINKS = {
-  instagram: "https://www.instagram.com/gold.sportsacademy/",   // ← replace with real link
-  youtube:   "https://youtube.com/",     // ← replace with real link
+  instagram: "https://www.instagram.com/goldsportsacademy/",   // ← replace with real link
+  youtube:   "https://www.youtube.com/@GoldSportsAcademy",     // ← replace with real link
   facebook:  "https://facebook.com/",    // ← replace with real link
   whatsapp:  "https://wa.me/919148873516?text=Hi%2C%20I%20found%20Gold%20Sports%20Academy%20online.%20I%20would%20like%20to%20know%20more%20about%20your%20classes%20and%20fees.%20Please%20share%20the%20details.%20Thank%20you!", // ← replace with real WhatsApp link
 };
@@ -396,11 +388,11 @@ function useReveal() {
   }, []);
 }
 
-const MARQUEE = ["Swimming Classes","Badminton Coaching","All Ages Welcome","Expert Coaches","Est. 2019","Kengeri, Bangalore","4.4★ Rated","Open 7 Days"];
+const MARQUEE = ["Swimming Classes","All Ages Welcome","Expert Coaches","Est. 2019","Kengeri, Bangalore","4.4★ Rated","Open 7 Days","Swimming Summer Camp 2026"];
 const ABOUT_CARDS = [
   { icon:"🎯", title:"Expert Coaching", desc:"Certified coaches with years of competitive and training experience across all levels." },
   { icon:"🏅", title:"All Ages & Levels", desc:"Programs for kids from age 4, beginners, intermediates and competitive players." },
-  { icon:"☀️", title:"Summer Camp 2026", desc:"Special summer camp now running — intensive daily sessions for kids & teens. Limited slots, enroll now!" },
+  { icon:"☀️", title:"Swimming Summer Camp 2026", desc:"Special summer camp now running — intensive daily sessions for kids & teens. Limited slots, enroll now!" },
 ];
 
 export default function HomePage() {
@@ -418,7 +410,6 @@ export default function HomePage() {
         </a>
         <div className="hp-nav-links">
           <a href="/swimming" className="hp-nav-link swim">🏊 Swimming</a>
-          <a href="/badminton" className="hp-nav-link shuttle">🏸 Badminton</a>
         </div>
       </nav>
 
@@ -431,26 +422,30 @@ export default function HomePage() {
           <span className="hp-hero-t1">Gold Sports</span>
           <span className="hp-hero-t2">Academy</span>
         </div>
-        <p className="hp-hero-sub">Where champions are made — professional coaching in swimming & badminton for all ages.</p>
+        <p className="hp-hero-sub">Where champions are made — professional swimming coaching for all ages.</p>
         <div className="hp-hero-cta">
           <a href="/swimming" className="hp-cta-swim">🏊 Swimming Classes</a>
-          <a href="/badminton" className="hp-cta-shuttle">🏸 Badminton Classes</a>
         </div>
-        <div className="hp-hero-stats">
-          {[
-            {n:"310+", l:"Students"},
-            {n:"4.4★", l:"JD Rating"},
-            {n:"7 Days",l:"Open Weekly"},
-            {n:"6 AM", l:"Opens Daily"},
-          ].map((s,i) => (
-            <div key={i} style={{display:"contents"}}>
-              {i>0 && <div className="hp-stat-sep"/>}
-              <div className="hp-stat">
-                <div className="hp-stat-n">{s.n}</div>
-                <div className="hp-stat-l">{s.l}</div>
-              </div>
-            </div>
-          ))}
+        <div className="hp-hero-stats" style={{display:"flex",flexDirection:"row",alignItems:"center",flexWrap:"nowrap",justifyContent:"center"}}>
+          <div className="hp-stat">
+            <div className="hp-stat-n">310+</div>
+            <div className="hp-stat-l">Students</div>
+          </div>
+          <div className="hp-stat-sep"/>
+          <div className="hp-stat">
+            <div className="hp-stat-n">4.4★</div>
+            <div className="hp-stat-l">JD Rating</div>
+          </div>
+          <div className="hp-stat-sep"/>
+          <div className="hp-stat">
+            <div className="hp-stat-n">7 Days</div>
+            <div className="hp-stat-l">Open Weekly</div>
+          </div>
+          <div className="hp-stat-sep"/>
+          <div className="hp-stat">
+            <div className="hp-stat-n">6 AM</div>
+            <div className="hp-stat-l">Opens Daily</div>
+          </div>
         </div>
         <div className="hp-scroll">
           <span>Scroll</span>
@@ -472,13 +467,11 @@ export default function HomePage() {
       {/* SPORT CARDS */}
       <div className="hp-cards-wrap">
         <div className="hp-cards-header">
-          <div>
-            <div className="hp-cards-eyebrow hp-reveal">Our Sports</div>
-            <div className="hp-cards-heading hp-reveal">Choose Your<br/>Sport</div>
-          </div>
-          <div className="hp-cards-sub hp-reveal">Professional coaching for both swimming and badminton — pick your path.</div>
+          <div className="hp-cards-eyebrow hp-reveal">Our Sport</div>
+          <div className="hp-cards-heading hp-reveal">Professional Swimming</div>
+          <div className="hp-cards-sub hp-reveal">Expert swimming coaching for all ages — from first splash to competitive level.</div>
         </div>
-        <div className="hp-cards-grid">
+        <div className="hp-cards-grid" style={{gridTemplateColumns:"1fr",maxWidth:"640px",margin:"0 auto"}}>
           <a href="/swimming" className="hp-card hp-card-swim hp-reveal">
             <div className="hp-card-bg"/>
             <div className="hp-card-grad"/>
@@ -490,20 +483,6 @@ export default function HomePage() {
               <span className="hp-card-icon">🏊</span>
               <div className="hp-card-sport">Swimming</div>
               <div className="hp-card-tagline">From first splash to champion strokes — beginner to competitive, all ages welcome.</div>
-              <div className="hp-card-cta"><div className="hp-card-cta-line"/>View Programs</div>
-            </div>
-          </a>
-          <a href="/badminton" className="hp-card hp-card-shuttle hp-reveal">
-            <div className="hp-card-bg"/>
-            <div className="hp-card-grad"/>
-            <div className="hp-card-top">
-              <span className="hp-card-badge">Racket Sports</span>
-              <div className="hp-card-arrow">↗</div>
-            </div>
-            <div className="hp-card-content">
-              <span className="hp-card-icon">🏸</span>
-              <div className="hp-card-sport">Badminton</div>
-              <div className="hp-card-tagline">Speed, agility and precision — from beginner basics to tournament-level play.</div>
               <div className="hp-card-cta"><div className="hp-card-cta-line"/>View Programs</div>
             </div>
           </a>
@@ -561,7 +540,7 @@ export default function HomePage() {
                 {[
                   { icon:"📍", label:"Address", val:"No.25, Near Bandematt Arch, BSM Layout, 7th Cross, Kengeri, Bangalore — 560060" },
                   { icon:"📞", label:"Phone",   val:"9148873516  /  91488867178" },
-                  { icon:"🕕", label:"Hours",   val:"Monday – Sunday  |  6:00 AM – 8:00 PM" },
+                  { icon:"🕕", label:"Hours",   val:"Tue – Sun  |  6:00 AM – 8:00 PM  |  Monday Holiday" },
                 ].map((d,i) => (
                   <div key={i} className="hp-map-detail hp-reveal">
                     <div className="hp-map-detail-icon">{d.icon}</div>
@@ -619,7 +598,6 @@ export default function HomePage() {
           <div className="hp-footer-right">
             <div className="hp-footer-nav">
               <a href="/swimming">Swimming</a>
-              <a href="/badminton">Badminton</a>
             </div>
             <div className="hp-footer-social">
               <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hp-footer-social-btn insta" title="Instagram">

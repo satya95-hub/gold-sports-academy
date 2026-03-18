@@ -275,62 +275,186 @@ const CSS = `
   50%{box-shadow:0 0 0 10px rgba(0,212,232,.12),0 0 60px rgba(0,212,232,.28)}}
 
 .coach-sec{text-align:center;}
-.coach-card{max-width:980px;margin:0 auto;
-  display:grid;grid-template-columns:260px 1fr;gap:clamp(32px,5vw,64px);
-  align-items:start;text-align:left;
+.coach-card{max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:240px 1fr;gap:clamp(28px,4vw,56px);
+  align-items:center;text-align:left;
   background:linear-gradient(145deg,#001c24,#002530);
   border:1px solid rgba(0,212,232,.25);border-radius:24px;
-  padding:clamp(28px,4vw,52px);
+  padding:clamp(28px,4vw,48px);
   box-shadow:0 24px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(0,212,232,.15);}
 @media(max-width:720px){.coach-card{grid-template-columns:1fr;text-align:center;}}
 
 /* Photo col */
-.coach-photo-col{display:flex;flex-direction:column;align-items:center;gap:20px;}
-.coach-ring-outer{position:relative;width:200px;height:200px;flex-shrink:0;}
+.coach-photo-col{display:flex;flex-direction:column;align-items:center;gap:18px;}
+.coach-ring-outer{position:relative;width:190px;height:190px;flex-shrink:0;}
 .coach-ring-svg{position:absolute;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);
   animation:ringRotate 12s linear infinite;}
-.coach-ring-inner{width:200px;height:200px;border-radius:50%;overflow:hidden;
+.coach-ring-inner{width:190px;height:190px;border-radius:50%;overflow:hidden;
   border:3px solid #00d4e8;
   animation:coachGlow 3s ease-in-out infinite;}
-/* Real photo — 1:1 square cropped to circle */
 .coach-img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;}
 .coach-img-placeholder{width:100%;height:100%;
   background:linear-gradient(135deg,#003d4d,#006070);
   display:flex;align-items:center;justify-content:center;font-size:80px;}
-.coach-stats-col{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;}
+.coach-stats-col{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;}
 .coach-stat-pill{background:rgba(0,212,232,.12);border:1px solid rgba(0,212,232,.3);
-  border-radius:12px;padding:10px 16px;text-align:center;min-width:110px;}
-.csp-val{display:block;font-size:24px;font-weight:800;color:#00d4e8;line-height:1;}
+  border-radius:12px;padding:9px 14px;text-align:center;min-width:100px;}
+.csp-val{display:block;font-size:22px;font-weight:800;color:#00d4e8;line-height:1;}
 .csp-lbl{display:block;font-size:9px;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:5px;}
+  text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:4px;}
 
 /* Info col */
 .coach-info-col{display:flex;flex-direction:column;gap:0;}
 .coach-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;
   text-transform:uppercase;color:#00d4e8;
   background:rgba(0,212,232,.15);border:1px solid rgba(0,212,232,.35);
-  padding:5px 14px;border-radius:100px;margin-bottom:12px;width:fit-content;}
+  padding:5px 14px;border-radius:100px;margin-bottom:10px;width:fit-content;}
 .coach-name-big{font-family:'Playfair Display',serif;font-weight:900;
-  font-size:clamp(26px,3.5vw,42px);color:#ffffff;letter-spacing:-.5px;
-  line-height:1.1;margin-bottom:6px;
+  font-size:clamp(24px,3vw,38px);color:#ffffff;letter-spacing:-.5px;
+  line-height:1.1;margin-bottom:4px;
   text-shadow:0 2px 20px rgba(0,212,232,.3);}
-.coach-location{font-size:12px;color:rgba(255,255,255,.55);
-  letter-spacing:.5px;margin-bottom:24px;}
-.coach-creds{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.coach-cred-row{display:flex;align-items:center;gap:14px;
+.coach-location{font-size:11px;color:rgba(255,255,255,.5);
+  letter-spacing:.5px;margin-bottom:18px;}
+.coach-creds{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;}
+.coach-cred-row{display:flex;align-items:center;gap:12px;
   background:rgba(0,0,0,.3);border:1px solid rgba(0,212,232,.18);
-  border-radius:12px;padding:12px 16px;transition:all .3s;}
+  border-radius:10px;padding:10px 14px;transition:all .3s;}
 .coach-cred-row:hover{background:rgba(0,212,232,.12);border-color:rgba(0,212,232,.4);
   transform:translateX(4px);}
-.coach-cred-icon{font-size:22px;flex-shrink:0;}
-.coach-cred-label{font-size:13px;font-weight:700;color:#ffffff;margin-bottom:2px;}
-.coach-cred-sub{font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.3px;}
+.coach-cred-icon{font-size:18px;flex-shrink:0;}
+.coach-cred-label{font-size:12px;font-weight:700;color:#ffffff;margin-bottom:1px;}
+.coach-cred-sub{font-size:10px;color:rgba(255,255,255,.45);letter-spacing:.3px;}
 .coach-linkedin-btn{display:inline-flex;align-items:center;gap:7px;
   background:#0A66C2;color:#fff;font-size:11px;font-weight:700;letter-spacing:.5px;
   padding:9px 18px;border-radius:8px;text-decoration:none;width:fit-content;
   transition:all .28s;box-shadow:0 4px 14px rgba(10,102,194,.4);}
 .coach-linkedin-btn:hover{transform:translateY(-3px);background:#0854a0;
   box-shadow:0 8px 24px rgba(10,102,194,.55);}
+
+/* SUMMER CAMP */
+/* ══ SUMMER CAMP ══════════════════════════════════════════ */
+@keyframes sunPulse{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.18) rotate(12deg)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes floatUp{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* ══ SUMMER CAMP ══════════════════════════════════════════ */
+.summer-sec{
+  position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#001e28,#002d3a,#001e28)!important;
+  border-radius:28px;
+  border:1px solid rgba(0,212,232,.2);
+  padding:clamp(36px,5vh,60px) clamp(20px,4vw,48px)!important;
+  max-width:980px!important;
+  box-shadow:0 0 120px rgba(0,180,220,.06) inset,0 24px 60px rgba(0,0,0,.3);}
+.summer-sec::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 40% at 50% 0%,rgba(0,212,232,.08) 0%,transparent 70%),
+    radial-gradient(ellipse 50% 30% at 10% 100%,rgba(0,150,180,.05) 0%,transparent 60%);}
+.sc-bubble{position:absolute;border-radius:50%;pointer-events:none;opacity:.05;}
+.sc-b1{width:320px;height:320px;background:#00d4e8;top:-80px;right:-60px;filter:blur(90px);}
+.sc-b2{width:220px;height:220px;background:#007a8a;bottom:40px;left:-40px;filter:blur(70px);}
+.sc-b3{width:160px;height:160px;background:#00bcd4;bottom:-30px;right:30%;filter:blur(60px);}
+.sc-header-wrap{position:relative;z-index:2;text-align:center;margin-bottom:clamp(32px,5vh,52px);}
+.sc-sun-big{font-size:clamp(44px,6vw,68px);display:block;
+  animation:floatUp 3s ease-in-out infinite;margin-bottom:12px;
+  filter:drop-shadow(0 0 24px rgba(255,200,0,.5));}
+.sc-title-chip{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,212,232,.1);border:1px solid rgba(0,212,232,.25);
+  border-radius:100px;padding:6px 20px;font-size:10px;font-weight:800;
+  letter-spacing:4px;text-transform:uppercase;color:#00d4e8;margin-bottom:16px;}
+.sc-main-title{font-family:'Playfair Display',serif;font-weight:900;
+  font-size:clamp(30px,5vw,60px);letter-spacing:-2px;line-height:1;
+  background:linear-gradient(135deg,#00d4e8,#7ff8ff,#00bcd4,#00d4e8);
+  background-size:300% auto;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:shimmer 4s linear infinite;margin-bottom:8px;}
+.sc-subtitle{font-size:clamp(12px,1.1vw,14px);color:rgba(255,255,255,.45);letter-spacing:.5px;}
+.sc-camps{display:flex;align-items:center;justify-content:center;
+  gap:clamp(12px,3vw,32px);flex-wrap:wrap;
+  margin-bottom:clamp(24px,4vh,40px);position:relative;z-index:2;}
+.sc-camp-card{position:relative;overflow:hidden;
+  background:rgba(0,212,232,.07);
+  border:1px solid rgba(0,212,232,.22);border-radius:18px;
+  padding:clamp(18px,2.5vw,28px) clamp(24px,3.5vw,44px);text-align:center;
+  transition:all .35s cubic-bezier(.25,.46,.45,.94);}
+.sc-camp-card:hover{transform:translateY(-5px) scale(1.02);
+  border-color:rgba(0,212,232,.45);
+  box-shadow:0 18px 50px rgba(0,180,220,.15);}
+.sc-camp-sun{font-size:38px;margin-bottom:10px;
+  display:block;animation:sunPulse 3s ease-in-out infinite;}
+.sc-camp-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:3px;
+  text-transform:uppercase;color:#00d4e8;
+  background:rgba(0,212,232,.1);border:1px solid rgba(0,212,232,.2);
+  border-radius:100px;padding:3px 12px;margin-bottom:10px;}
+.sc-camp-dates{font-size:clamp(14px,1.8vw,19px);font-weight:900;color:#fff;margin-bottom:4px;}
+.sc-camp-label{font-size:11px;color:rgba(0,212,232,.55);
+  letter-spacing:2px;text-transform:uppercase;font-weight:600;}
+.sc-camp-arrow{font-size:26px;color:rgba(0,212,232,.3);animation:floatUp 2s ease-in-out infinite;}
+.sc-content-grid{display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(12px,2vw,20px);max-width:880px;margin:0 auto clamp(20px,3vh,32px);
+  position:relative;z-index:2;}
+@media(max-width:640px){.sc-content-grid{grid-template-columns:1fr;}}
+.sc-timing-card{background:rgba(0,0,0,.25);
+  border:1px solid rgba(0,212,232,.14);border-radius:14px;overflow:hidden;transition:all .3s;}
+.sc-timing-card:hover{border-color:rgba(0,212,232,.3);box-shadow:0 8px 28px rgba(0,180,220,.1);}
+.sc-timing-header{display:flex;align-items:center;gap:9px;
+  padding:12px 16px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;}
+.sc-morning{background:linear-gradient(90deg,rgba(255,140,0,.18),rgba(255,80,0,.06));
+  color:#ffb347;border-bottom:1px solid rgba(255,140,0,.1);}
+.sc-evening{background:linear-gradient(90deg,rgba(255,140,0,.18),rgba(255,80,0,.06));
+  color:#ffb347;border-bottom:1px solid rgba(255,140,0,.1);}
+.sc-timing-body{padding:10px 14px;display:flex;flex-direction:column;gap:5px;}
+.sc-timing-row{display:flex;align-items:center;justify-content:space-between;
+  font-size:12px;font-weight:600;color:#fff;
+  background:rgba(255,255,255,.04);border-radius:7px;
+  padding:7px 11px;transition:background .25s;
+  border-left:2px solid rgba(0,212,232,.28);}
+.sc-timing-row:hover{background:rgba(0,212,232,.09);}
+.sc-timing-row-num{font-size:9px;color:rgba(0,212,232,.4);font-weight:700;}
+.sc-info-row{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;
+  margin-bottom:clamp(16px,2.5vh,28px);position:relative;z-index:2;}
+.sc-info-chip{display:flex;align-items:center;gap:7px;
+  background:rgba(0,212,232,.07);border:1px solid rgba(0,212,232,.18);
+  border-radius:100px;padding:8px 18px;font-size:11px;font-weight:700;
+  color:#00d4e8;letter-spacing:.3px;transition:all .25s;}
+.sc-info-chip:hover{background:rgba(0,212,232,.14);border-color:rgba(0,212,232,.35);}
+.sc-holiday{background:rgba(255,60,60,.07);border-color:rgba(255,60,60,.18);color:#ff8080;}
+.sc-holiday:hover{background:rgba(255,60,60,.13);}
+.sc-sunday{display:flex;align-items:center;gap:14px;
+  max-width:540px;margin:0 auto clamp(22px,3vh,36px);
+  background:rgba(0,212,232,.06);border:1px solid rgba(0,212,232,.18);
+  border-radius:14px;padding:16px 22px;position:relative;z-index:2;transition:all .3s;}
+.sc-sunday:hover{border-color:rgba(0,212,232,.35);box-shadow:0 8px 28px rgba(0,180,220,.1);}
+.sc-sunday-icon{font-size:28px;flex-shrink:0;animation:floatUp 2.5s ease-in-out infinite;}
+.sc-sunday-title{font-size:14px;font-weight:900;color:#00d4e8;margin-bottom:3px;}
+.sc-sunday-desc{font-size:12px;color:rgba(255,255,255,.48);line-height:1.6;}
+.sc-fees{max-width:880px;margin:0 auto clamp(20px,3vh,34px);position:relative;z-index:2;}
+.sc-fees-title{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;
+  color:rgba(0,212,232,.5);text-align:center;margin-bottom:16px;}
+.sc-fees-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,16px);}
+@media(max-width:540px){.sc-fees-grid{grid-template-columns:1fr;}}
+.sc-fee-card{position:relative;overflow:hidden;
+  background:rgba(0,0,0,.25);border:1px solid rgba(0,212,232,.14);
+  border-radius:14px;padding:clamp(18px,2.2vw,26px) clamp(14px,2vw,20px);
+  text-align:center;transition:all .32s;}
+.sc-fee-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,#007a8a,#00d4e8);opacity:0;transition:opacity .3s;}
+.sc-fee-card:hover{transform:translateY(-5px);
+  border-color:rgba(0,212,232,.32);box-shadow:0 14px 40px rgba(0,180,220,.12);}
+.sc-fee-card:hover::before{opacity:1;}
+.sc-fee-highlight{border-color:rgba(0,212,232,.25);background:rgba(0,212,232,.05);}
+.sc-fee-icon{font-size:26px;margin-bottom:8px;display:block;}
+.sc-fee-who{font-size:9px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:5px;}
+.sc-fee-age{font-size:13px;font-weight:800;color:#fff;margin-bottom:10px;}
+.sc-fee-price{font-size:clamp(26px,3.5vw,40px);font-weight:900;
+  color:#00d4e8;letter-spacing:-1px;line-height:1;}
+.sc-fee-note{font-size:9px;color:rgba(255,255,255,.25);margin-top:5px;
+  letter-spacing:1.5px;text-transform:uppercase;}
+.sc-extras{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;}
+.sc-extras span{display:flex;align-items:center;gap:6px;
+  background:rgba(0,212,232,.06);border:1px solid rgba(0,212,232,.16);
+  border-radius:100px;padding:7px 16px;font-size:11px;font-weight:700;
+  color:rgba(255,255,255,.6);letter-spacing:.5px;transition:all .25s;}
+.sc-extras span:hover{background:rgba(0,212,232,.13);border-color:rgba(0,212,232,.32);color:#00d4e8;}
 `;
 
 const PROGRAMS=[
@@ -347,7 +471,7 @@ const PRICES=[
   {name:"Champions Track",       dur:"90 min / session",  price:"₹2,500",tag:"t-adv", lbl:"Advanced"},
   {name:"Summer Crash Camp",     dur:"Seasonal · 1 month",price:"₹3,000",tag:"t-new", lbl:"Camp"},
 ];
-const DAYS=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"];
+const DAYS=["Tue","Wed","Thu","Fri","Sat","Sun"];
 const REVIEWS=[
   {ini:"C",name:"Charan",date:"April 2019",text:"Very Good Coaching — professionals who are patient and encouraging. Perfect for beginners of any age."},
   {ini:"P",name:"Pradeep",date:"October 2024",text:"Excellent coaching staff. My kids genuinely look forward to morning sessions. Clean pool and well-maintained."},
@@ -538,7 +662,7 @@ export default function App(){
 
           {/* CTA buttons */}
           <div className="hero-btns">
-            <a href="#pricing" className="btn-solid">🏊 View Pricing</a>
+            <a href="#summercamp" className="btn-solid">🏊 View Pricing</a>
             <a href="#programs" className="btn-ghost">Explore Programs</a>
           </div>
 
@@ -591,28 +715,9 @@ export default function App(){
         </section>
 
         {/* Pricing */}
-        <section className="sec" id="pricing" style={{paddingTop:0}}>
-          <div className="eyebrow reveal">— Fee Structure —</div>
-          <h2 className="sh2 reveal">Swim <em>Pricing</em></h2>
-          <div className="sdiv reveal"/>
-          <div className="price-shell reveal">
-            <div className="ph"><h3>🌊 Swimming Fee Structure</h3><p>Monthly · Kengeri Pool</p></div>
-            <div className="pt-head"><span>Program</span><span>Duration</span><span>Monthly Fee</span><span>Status</span></div>
-            {PRICES.map((r,i)=>(
-              <div key={i} className="pt-row">
-                <div className="pnm">{r.name}</div>
-                <div className="pdr">{r.dur}</div>
-                <div className="ppr">{r.price}</div>
-                <div><span className={`tag ${r.tag}`}>{r.lbl}</span></div>
-              </div>
-            ))}
-            <div className="pt-note">* Indicative pricing. Contact academy for exact fees.</div>
-          </div>
-        </section>
-
         {/* Schedule */}
         <section className="sec" id="schedule" style={{paddingTop:0}}>
-          <div className="eyebrow reveal">— Open Every Day —</div>
+          <div className="eyebrow reveal">— Tue to Sun · Monday Holiday —</div>
           <h2 className="sh2 reveal">Pool <em>Timings</em></h2>
           <div className="sdiv reveal"/>
           <div className="sched">
@@ -626,8 +731,127 @@ export default function App(){
           </div>
         </section>
 
+        {/* SUMMER CAMP */}
+        <section className="sec summer-sec" id="summercamp" style={{paddingTop:"clamp(48px,6vh,80px)"}}>
+          {/* decorative glow blobs */}
+          <div className="sc-bubble sc-b1"/>
+          <div className="sc-bubble sc-b2"/>
+          <div className="sc-bubble sc-b3"/>
+
+          {/* Header */}
+          <div className="sc-header-wrap">
+            <span className="sc-sun-big">☀️</span>
+            <div className="sc-title-chip">🏊 Limited Slots Available</div>
+            <div className="sc-main-title">Swimming Summer Camp</div>
+            <div className="sc-subtitle">Intensive swimming training for kids & all ages — Kengeri, Bangalore</div>
+          </div>
+
+          {/* Camp date cards */}
+          <div className="sc-camps">
+            <div className="sc-camp-card">
+              <span className="sc-camp-sun">☀️</span>
+              <div className="sc-camp-badge">1st Camp</div>
+              <div className="sc-camp-dates">03 Apr – 01 May 2026</div>
+              <div className="sc-camp-label">April Batch</div>
+            </div>
+            <div className="sc-camp-arrow">→</div>
+            <div className="sc-camp-card">
+              <span className="sc-camp-sun">🌞</span>
+              <div className="sc-camp-badge">2nd Camp</div>
+              <div className="sc-camp-dates">02 May – 30 May 2026</div>
+              <div className="sc-camp-label">May Batch</div>
+            </div>
+          </div>
+
+          {/* Timings grid */}
+          <div className="sc-content-grid reveal">
+            <div className="sc-timing-card">
+              <div className="sc-timing-header sc-morning">
+                <span>🌅</span> Morning Timings &nbsp;<span style={{fontSize:"10px",opacity:.6,fontWeight:600}}>Tue – Sat</span>
+              </div>
+              <div className="sc-timing-body">
+                {["6:00 AM – 7:00 AM","7:00 AM – 8:00 AM","8:00 AM – 9:00 AM",
+                  "9:00 AM – 10:00 AM","10:00 AM – 11:00 AM","11:00 AM – 12:00 PM"].map((t,i)=>(
+                  <div key={i} className="sc-timing-row">
+                    <span>{t}</span>
+                    <span className="sc-timing-row-num">Slot {i+1}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="sc-timing-card">
+              <div className="sc-timing-header sc-evening">
+                <span>🌆</span> Evening Timings &nbsp;<span style={{fontSize:"10px",opacity:.6,fontWeight:600}}>Tue – Sat</span>
+              </div>
+              <div className="sc-timing-body">
+                {["4:00 PM – 5:00 PM","5:00 PM – 6:00 PM",
+                  "6:00 PM – 7:00 PM","7:00 PM – 8:00 PM"].map((t,i)=>(
+                  <div key={i} className="sc-timing-row">
+                    <span>{t}</span>
+                    <span className="sc-timing-row-num">Slot {i+1}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Schedule key */}
+          <div className="sc-info-row reveal">
+            <div className="sc-info-chip">📅 Tue – Sat · Camp Coaching + Public Welcome</div>
+            <div className="sc-info-chip">☀️ Sun · Public Batch Only (No Coaching)</div>
+            <div className="sc-info-chip sc-holiday">🚫 Monday — Holiday</div>
+          </div>
+
+          {/* Public batch note */}
+          <div className="sc-sunday reveal">
+            <span className="sc-sunday-icon">🌊</span>
+            <div>
+              <div className="sc-sunday-title">Public Batch — Open All Days (Tue–Sun)</div>
+              <div className="sc-sunday-desc">
+                Public swimmers are welcome every day · <strong style={{color:"#00d4e8"}}>₹100 per hour</strong> · No registration needed<br/>
+                <span style={{color:"rgba(255,180,0,.8)",fontWeight:700}}>Sunday is exclusively for public batch — 6:00 AM to 8:00 PM · No coaching sessions</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Fees */}
+          <div className="sc-fees reveal">
+            <div className="sc-fees-title">☀️ Summer Camp Fees</div>
+            <div className="sc-fees-grid">
+              <div className="sc-fee-card">
+                <span className="sc-fee-icon">👦</span>
+                <div className="sc-fee-who">Tue – Sat · 12:00 PM to 4:00 PM</div>
+                <div className="sc-fee-age">Below 10 Years</div>
+                <div className="sc-fee-price">₹3,500</div>
+                <div className="sc-fee-note">per camp</div>
+              </div>
+              <div className="sc-fee-card sc-fee-highlight">
+                <span className="sc-fee-icon">🧑</span>
+                <div className="sc-fee-who">Tue – Sat · 12:00 PM to 4:00 PM</div>
+                <div className="sc-fee-age">Above 10 Years</div>
+                <div className="sc-fee-price">₹3,700</div>
+                <div className="sc-fee-note">per camp</div>
+              </div>
+              <div className="sc-fee-card">
+                <span className="sc-fee-icon">🌊</span>
+                <div className="sc-fee-who">Tue – Sun · Any Time Slot</div>
+                <div className="sc-fee-age">Public Batch · All Ages</div>
+                <div className="sc-fee-price">₹100</div>
+                <div className="sc-fee-note">per hour</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Extras */}
+          <div className="sc-extras reveal">
+            <span>🥽 Swimming Costumes Available</span>
+            <span>👓 Goggles Available</span>
+            <span>🧢 Caps Available</span>
+          </div>
+        </section>
+
         {/* COACH SECTION */}
-        <section className="sec coach-sec" id="coach" style={{paddingTop:0}}>
+        <section className="sec coach-sec" id="coach" style={{paddingTop:"clamp(48px,6vh,80px)"}}>
           <div className="eyebrow reveal">— Meet Your Coach —</div>
           <h2 className="sh2 reveal">The <em>Expert</em> Behind Every Stroke</h2>
           <div className="sdiv reveal"/>
@@ -741,10 +965,10 @@ export default function App(){
 
       <footer className="footer">
         <p>© 2026 Gold Sports Academy · No.25, Near Bandematt Arch, BSM Layout, Kengeri, Bangalore 560060</p>
-        <p>GSTIN: 29AIXPL3817F3ZP &nbsp;·&nbsp; <a href="#">→ Badminton Classes</a> &nbsp;·&nbsp; <a href="#">← Home</a></p>
+        <p>GSTIN: 29AIXPL3817F3ZP &nbsp;·&nbsp; <a href="/">← Back to Home</a></p>
         <div className="footer-socials">
           {/* Instagram — branded gradient */}
-          <a href="https://www.instagram.com/gold.sportsacademy/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="Instagram">
+          <a href="https://www.instagram.com/goldsportsacademy/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="Instagram">
             <svg viewBox="0 0 24 24" width="22" height="22">
               <defs>
                 <radialGradient id="sw-ig" cx="30%" cy="107%" r="150%">
@@ -760,7 +984,7 @@ export default function App(){
             </svg>
           </a>
           {/* YouTube — branded red */}
-          <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="YouTube">
+          <a href="https://www.youtube.com/@GoldSportsAcademy" target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="YouTube">
             <svg viewBox="0 0 24 24" width="22" height="22">
               <rect x="0" y="0" width="24" height="24" rx="5" fill="#FF0000"/>
               <path d="M19.6 8.2a1.96 1.96 0 0 0-1.38-1.39C16.9 6.5 12 6.5 12 6.5s-4.9 0-6.22.31A1.96 1.96 0 0 0 4.4 8.2C4.1 9.53 4.1 12 4.1 12s0 2.47.3 3.8a1.96 1.96 0 0 0 1.38 1.39C7.1 17.5 12 17.5 12 17.5s4.9 0 6.22-.31a1.96 1.96 0 0 0 1.38-1.39c.3-1.33.3-3.8.3-3.8s0-2.47-.3-3.8z" fill="#fff"/>
