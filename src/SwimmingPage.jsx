@@ -413,7 +413,7 @@ const CSS = `
   margin-bottom:clamp(16px,2.5vh,28px);position:relative;z-index:2;}
 .sc-info-chip{display:flex;align-items:center;gap:7px;
   background:rgba(0,212,232,.07);border:1px solid rgba(0,212,232,.18);
-  border-radius:100px;padding:8px 18px;font-size:11px;font-weight:700;
+  border-radius:10px;padding:10px 20px;font-size:11px;font-weight:700;
   color:#00d4e8;letter-spacing:.3px;transition:all .25s;}
 .sc-info-chip:hover{background:rgba(0,212,232,.14);border-color:rgba(0,212,232,.35);}
 .sc-holiday{background:rgba(255,60,60,.07);border-color:rgba(255,60,60,.18);color:#ff8080;}
@@ -797,47 +797,34 @@ export default function App(){
 
           {/* Schedule key */}
           <div className="sc-info-row reveal">
-            <div className="sc-info-chip">📅 Tue – Sat · Camp Coaching + Public Welcome</div>
-            <div className="sc-info-chip">☀️ Sun · Public Batch Only (No Coaching)</div>
+            <div className="sc-info-chip">🏊 Coaching: Tue – Sat · 6:00 AM – 12:00 PM & 4:00 PM – 8:00 PM</div>
             <div className="sc-info-chip sc-holiday">🚫 Monday — Holiday</div>
           </div>
 
-          {/* Public batch note */}
-          <div className="sc-sunday reveal">
-            <span className="sc-sunday-icon">🌊</span>
-            <div>
-              <div className="sc-sunday-title">Public Batch — Open All Days (Tue–Sun)</div>
-              <div className="sc-sunday-desc">
-                Public swimmers are welcome every day · <strong style={{color:"#00d4e8"}}>₹100 per hour</strong> · No registration needed<br/>
-                <span style={{color:"rgba(255,180,0,.8)",fontWeight:700}}>Sunday is exclusively for public batch — 6:00 AM to 8:00 PM · No coaching sessions</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Fees */}
+          {/* Fees — coaching focused */}
           <div className="sc-fees reveal">
-            <div className="sc-fees-title">☀️ Summer Camp Fees</div>
+            <div className="sc-fees-title">🏆 Summer Camp Coaching Fees</div>
             <div className="sc-fees-grid">
               <div className="sc-fee-card">
                 <span className="sc-fee-icon">👦</span>
-                <div className="sc-fee-who">Tue – Sat · 12:00 PM to 4:00 PM</div>
+                <div className="sc-fee-who">Tue – Sat · Coaching Batch</div>
                 <div className="sc-fee-age">Below 10 Years</div>
                 <div className="sc-fee-price">₹3,500</div>
-                <div className="sc-fee-note">per camp</div>
+                <div className="sc-fee-note">per camp · 1 month</div>
               </div>
               <div className="sc-fee-card sc-fee-highlight">
                 <span className="sc-fee-icon">🧑</span>
-                <div className="sc-fee-who">Tue – Sat · 12:00 PM to 4:00 PM</div>
+                <div className="sc-fee-who">Tue – Sat · Coaching Batch</div>
                 <div className="sc-fee-age">Above 10 Years</div>
                 <div className="sc-fee-price">₹3,700</div>
-                <div className="sc-fee-note">per camp</div>
+                <div className="sc-fee-note">per camp · 1 month</div>
               </div>
               <div className="sc-fee-card">
                 <span className="sc-fee-icon">🌊</span>
-                <div className="sc-fee-who">Tue – Sun · Any Time Slot</div>
+                <div className="sc-fee-who">Tue–Sat 11AM–4PM · Sun Full Day</div>
                 <div className="sc-fee-age">Public Batch · All Ages</div>
                 <div className="sc-fee-price">₹100</div>
-                <div className="sc-fee-note">per hour</div>
+                <div className="sc-fee-note">per hour · walk-in welcome</div>
               </div>
             </div>
           </div>
