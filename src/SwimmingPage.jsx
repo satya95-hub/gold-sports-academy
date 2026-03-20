@@ -848,7 +848,7 @@ export default function App(){
             <div className="coach-photo-col">
               <div className="coach-ring-outer">
                 <div className="coach-ring-inner">
-                  <img src="/src/assets/coach_img.png" className="coach-img" alt="Lakshman HK - Head Coach Gold Sports Academy"/>
+                  <img src="https://res.cloudinary.com/drrwpopud/image/upload/v1773985345/profileimg_ccehr8.png" className="coach-img" alt="Lakshman HK - Head Coach Gold Sports Academy"/>
                 </div>
                 <svg className="coach-ring-svg" viewBox="0 0 200 200">
                   <circle cx="100" cy="100" r="94" fill="none" stroke="url(#ringGrad)" strokeWidth="2.5" strokeDasharray="12 6" strokeLinecap="round"/>
