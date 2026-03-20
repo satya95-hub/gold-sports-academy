@@ -27,20 +27,24 @@ html{scroll-behavior:smooth;}
 /* NAV */
 .hp-nav{position:fixed;top:0;left:0;right:0;z-index:300;
   display:flex;align-items:center;justify-content:space-between;
-  padding:clamp(16px,2.2vw,22px) clamp(24px,4vw,60px);
+  padding:clamp(12px,2.2vw,22px) clamp(16px,4vw,60px);
   background:rgba(250,248,244,.92);backdrop-filter:blur(24px);
   border-bottom:1px solid rgba(184,122,0,.12);}
-.hp-nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
-.hp-nav-logo-mark{width:34px;height:34px;
+.hp-nav-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0;}
+.hp-nav-logo-mark{width:clamp(28px,4vw,34px);height:clamp(28px,4vw,34px);
   background:linear-gradient(135deg,#b87a00,#e8a800);
-  border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.hp-nav-logo-text{font-size:clamp(13px,1.3vw,15px);font-weight:700;color:#6b3f00;letter-spacing:.3px;}
+  border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+.hp-nav-logo-text{font-size:clamp(12px,1.3vw,15px);font-weight:700;color:#6b3f00;letter-spacing:.3px;white-space:nowrap;}
 .hp-nav-logo-text span{color:#b87a00;font-weight:700;}
-.hp-nav-links{display:flex;align-items:center;gap:clamp(8px,1.5vw,12px);}
-.hp-nav-link{font-size:12px;font-weight:600;letter-spacing:.5px;text-decoration:none;
-  padding:8px 20px;border-radius:7px;transition:all .25s;display:flex;align-items:center;gap:7px;}
+.hp-nav-links{display:flex;align-items:center;gap:clamp(6px,1.5vw,12px);}
+.hp-nav-link{font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.3px;text-decoration:none;
+  padding:clamp(6px,1vw,8px) clamp(12px,2vw,20px);border-radius:7px;transition:all .25s;display:flex;align-items:center;gap:6px;}
 .hp-nav-link.swim{background:rgba(0,130,180,.07);color:#0072a0;border:1px solid rgba(0,130,180,.18);}
 .hp-nav-link.swim:hover{background:rgba(0,130,180,.14);border-color:rgba(0,130,180,.4);}
+@media(max-width:480px){
+  .hp-nav-logo-text{font-size:11px;}
+  .hp-nav-link{padding:6px 10px;font-size:10px;}
+}
 
 /* HERO */
 .hp-hero{width:100%;min-height:100vh;display:flex;flex-direction:column;
@@ -446,10 +450,6 @@ export default function HomePage() {
             <div className="hp-stat-n">6 AM</div>
             <div className="hp-stat-l">Opens Daily</div>
           </div>
-        </div>
-        <div className="hp-scroll">
-          <span>Scroll</span>
-          <div className="hp-scroll-line"/>
         </div>
       </section>
 

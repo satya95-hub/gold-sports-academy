@@ -12,16 +12,21 @@ const CSS = `
 @keyframes ripOut{to{transform:translate(-50%,-50%) scale(18);opacity:0}}
 
 .nav{position:fixed;top:0;left:0;right:0;z-index:300;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
-  padding:clamp(12px,2vw,18px) clamp(18px,4vw,52px);
+  padding:clamp(10px,2vw,18px) clamp(12px,4vw,52px);
   background:rgba(0,0,0,.22);backdrop-filter:blur(20px);
   border-bottom:1px solid rgba(255,255,255,.1);}
-.nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(14px,1.8vw,20px);color:#00d4e8;text-decoration:none;letter-spacing:.5px;justify-self:start;}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(11px,1.8vw,20px);color:#00d4e8;text-decoration:none;letter-spacing:.3px;justify-self:start;white-space:nowrap;}
 .nav-logo em{font-style:normal;color:#e8a800;}
-.nav-pill{font-family:'Exo 2',sans-serif;font-size:clamp(8px,.9vw,11px);font-weight:800;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.75);justify-self:center;text-align:center;}
-.nav-back{font-family:'Exo 2',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+.nav-pill{font-family:'Exo 2',sans-serif;font-size:clamp(6px,.9vw,11px);font-weight:800;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.75);justify-self:center;text-align:center;padding:0 6px;}
+.nav-back{font-family:'Exo 2',sans-serif;font-size:clamp(8px,1vw,11px);font-weight:700;letter-spacing:.5px;text-transform:uppercase;
   color:#fff;text-decoration:none;background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.38);
-  padding:6px 16px;border-radius:3px;transition:all .3s;justify-self:end;}
+  padding:5px 10px;border-radius:3px;transition:all .3s;justify-self:end;white-space:nowrap;}
 .nav-back:hover{background:#fff;color:#007a8a;}
+@media(max-width:480px){
+  .nav-pill{letter-spacing:1px;font-size:6px;}
+  .nav-logo{font-size:10px;}
+  .nav-back{font-size:8px;padding:4px 7px;}
+}
 
 /* ── HERO ── */
 .hero{position:relative;width:100%;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
@@ -368,26 +373,28 @@ const CSS = `
   animation:shimmer 4s linear infinite;margin-bottom:8px;}
 .sc-subtitle{font-size:clamp(12px,1.1vw,14px);color:rgba(255,255,255,.45);letter-spacing:.5px;}
 .sc-camps{display:flex;align-items:center;justify-content:center;
-  gap:clamp(12px,3vw,32px);flex-wrap:wrap;
+  gap:clamp(10px,3vw,32px);flex-wrap:nowrap;
   margin-bottom:clamp(24px,4vh,40px);position:relative;z-index:2;}
 .sc-camp-card{position:relative;overflow:hidden;
   background:rgba(0,212,232,.07);
   border:1px solid rgba(0,212,232,.22);border-radius:18px;
-  padding:clamp(18px,2.5vw,28px) clamp(24px,3.5vw,44px);text-align:center;
-  transition:all .35s cubic-bezier(.25,.46,.45,.94);}
+  padding:clamp(16px,2.5vw,28px) clamp(16px,3.5vw,44px);text-align:center;
+  transition:all .35s cubic-bezier(.25,.46,.45,.94);
+  flex:1;min-width:0;max-width:260px;}
 .sc-camp-card:hover{transform:translateY(-5px) scale(1.02);
   border-color:rgba(0,212,232,.45);
   box-shadow:0 18px 50px rgba(0,180,220,.15);}
-.sc-camp-sun{font-size:38px;margin-bottom:10px;
+.sc-camp-sun{font-size:clamp(28px,5vw,38px);margin-bottom:8px;
   display:block;animation:sunPulse 3s ease-in-out infinite;}
-.sc-camp-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:3px;
+.sc-camp-badge{display:inline-block;font-size:9px;font-weight:800;letter-spacing:2px;
   text-transform:uppercase;color:#00d4e8;
   background:rgba(0,212,232,.1);border:1px solid rgba(0,212,232,.2);
-  border-radius:100px;padding:3px 12px;margin-bottom:10px;}
-.sc-camp-dates{font-size:clamp(14px,1.8vw,19px);font-weight:900;color:#fff;margin-bottom:4px;}
-.sc-camp-label{font-size:11px;color:rgba(0,212,232,.55);
+  border-radius:100px;padding:3px 10px;margin-bottom:8px;}
+.sc-camp-dates{font-size:clamp(12px,1.8vw,19px);font-weight:900;color:#fff;margin-bottom:4px;}
+.sc-camp-label{font-size:10px;color:rgba(0,212,232,.55);
   letter-spacing:2px;text-transform:uppercase;font-weight:600;}
-.sc-camp-arrow{font-size:26px;color:rgba(0,212,232,.3);animation:floatUp 2s ease-in-out infinite;}
+.sc-camp-arrow{font-size:22px;color:rgba(0,212,232,.3);animation:floatUp 2s ease-in-out infinite;flex-shrink:0;}
+@media(max-width:400px){.sc-camp-arrow{display:none;}}
 .sc-content-grid{display:grid;grid-template-columns:1fr 1fr;
   gap:clamp(12px,2vw,20px);max-width:880px;margin:0 auto clamp(20px,3vh,32px);
   position:relative;z-index:2;}
@@ -680,10 +687,6 @@ export default function App(){
           </div>
         </div>
 
-        <div className="scroll-hint">
-          <span>Scroll</span>
-          <div className="scroll-line"/>
-        </div>
       </section>
 
       {/* Wave */}
