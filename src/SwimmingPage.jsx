@@ -644,7 +644,7 @@ export default function App(){
       {/* ══ HERO — fullscreen slow-motion diver video ══ */}
       <section className="hero">
         <video className="hero-vid" autoPlay muted loop playsInline>
-          <source src="/src/assets/swim1.mp4" type="video/mp4"/>
+          <source src="https://res.cloudinary.com/drrwpopud/video/upload/v1773983844/gs3_kt82uo.mp4" type="video/mp4"/>
         </video>
         <div className="hero-overlay"/>
 
