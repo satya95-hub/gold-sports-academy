@@ -954,6 +954,7 @@ export default function App(){
       <footer className="footer">
         <p>© 2026 Gold Sports Academy · No.25, Near Bandematt Arch, BSM Layout, Kengeri, Bangalore 560060</p>
         <p>GSTIN: 29AIXPL3817F3ZP &nbsp;·&nbsp; <a href="/">← Back to Home</a></p>
+        <p style={{marginTop:"8px",fontSize:"11px",color:"rgba(255,255,255,.2)"}}>Designed & Developed by <a href="https://satya95-hub.github.io/Naga-Satyam-Portfolio/" target="_blank" rel="noopener noreferrer" style={{color:"rgba(0,212,232,.5)",textDecoration:"none",fontWeight:600}}>Naga Satyam Chitturi</a></p>
         <div className="footer-socials">
           {/* Instagram — branded gradient */}
           <a href="https://www.instagram.com/goldsportsacademy/" target="_blank" rel="noopener noreferrer" className="footer-social-btn" title="Instagram">

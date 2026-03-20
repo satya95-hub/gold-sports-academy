@@ -613,7 +613,7 @@ export default function HomePage() {
           </div>
         </div>
         <div className="hp-footer-bottom">
-          <span className="hp-footer-copy">Designed & built for Gold Sports Academy, Kengeri</span>
+          <span className="hp-footer-copy">Designed & Developed by <a href="https://satya95-hub.github.io/Naga-Satyam-Portfolio/" target="_blank" rel="noopener noreferrer" style={{color:"#b87a00",textDecoration:"none",fontWeight:600}}>Naga Satyam Chitturi</a></span>
           <span className="hp-footer-gstin">GSTIN: 29AIXPL3817F3ZP</span>
         </div>
       </footer>
