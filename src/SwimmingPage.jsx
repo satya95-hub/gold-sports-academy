@@ -807,17 +807,15 @@ export default function App(){
             <div className="sc-fees-grid">
               <div className="sc-fee-card">
                 <span className="sc-fee-icon">👦</span>
-                <div className="sc-fee-who">Tue – Sat · Coaching Batch</div>
                 <div className="sc-fee-age">Below 10 Years</div>
                 <div className="sc-fee-price">₹3,500</div>
-                <div className="sc-fee-note">per camp · 1 month</div>
+                <div className="sc-fee-note">per camp</div>
               </div>
               <div className="sc-fee-card sc-fee-highlight">
                 <span className="sc-fee-icon">🧑</span>
-                <div className="sc-fee-who">Tue – Sat · Coaching Batch</div>
                 <div className="sc-fee-age">Above 10 Years</div>
                 <div className="sc-fee-price">₹3,700</div>
-                <div className="sc-fee-note">per camp · 1 month</div>
+                <div className="sc-fee-note">per camp</div>
               </div>
               <div className="sc-fee-card">
                 <span className="sc-fee-icon">🌊</span>
@@ -883,7 +881,7 @@ export default function App(){
               <div className="coach-creds">
                 {[
                   { icon:"🏊", label:"Head Coach & Founder", sub:"Gold Sports Academy" },
-                  { icon:"🎓", label:"ASCA Certified Level 2", sub:"American Swimming Coaches Association" },
+                  { icon:"🎓", label:"ASCA Certified", sub:"American Swimming Coaches Association" },
                   { icon:"🌐", label:"Internationally Certified Coach", sub:"Global Swimming Standards" },
                   { icon:"🛟", label:"Advance Lifeguarding", sub:"Certified Water Safety" },
                   { icon:"❤️", label:"CPR Certified", sub:"Emergency Response Ready" },
