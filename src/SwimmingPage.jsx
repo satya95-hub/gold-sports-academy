@@ -29,7 +29,7 @@ const CSS = `
 }
 
 /* ── HERO ── */
-.hero{position:relative;width:100%;height:100vh;overflow:hidden;display:flex;align-items:center;justify-content:center;}
+.hero{position:relative;width:100%;min-height:100vh;height:auto;overflow:hidden;display:flex;align-items:center;justify-content:center;}
 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;z-index:0;}
 .hero-overlay{position:absolute;inset:0;z-index:1;
   background:linear-gradient(to bottom,
@@ -82,14 +82,20 @@ const CSS = `
 
 /* Stats row */
 .hero-stats{display:flex;align-items:center;gap:0;flex-wrap:nowrap;justify-content:center;
-  animation:fadeUp .85s ease .78s both;}
-.stat-item{text-align:center;padding:0 clamp(18px,3vw,44px);white-space:nowrap;}
+  animation:fadeUp .85s ease .78s both;width:100%;padding:0 4px;}
+.stat-item{text-align:center;padding:0 clamp(4px,1.8vw,36px);white-space:nowrap;flex:1;min-width:0;}
 .stat-n{font-family:'Inter',sans-serif;font-weight:800;
-  font-size:clamp(20px,2.8vw,38px);color:#fff;line-height:1;white-space:nowrap;
+  font-size:clamp(13px,2.8vw,38px);color:#fff;line-height:1;white-space:nowrap;
   text-shadow:0 2px 20px rgba(0,0,0,.4);}
-.stat-l{font-family:'Exo 2',sans-serif;font-size:clamp(8px,.85vw,10px);font-weight:700;
-  letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:5px;white-space:nowrap;}
-.stat-sep{width:1px;height:32px;background:rgba(255,255,255,.2);flex-shrink:0;}
+.stat-l{font-family:'Exo 2',sans-serif;font-size:clamp(5px,.85vw,10px);font-weight:700;
+  letter-spacing:.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:5px;white-space:nowrap;}
+.stat-sep{width:1px;height:22px;background:rgba(255,255,255,.2);flex-shrink:0;}
+@media(max-width:400px){
+  .stat-item{padding:0 3px;}
+  .stat-n{font-size:11px;}
+  .stat-l{font-size:5px;letter-spacing:0px;}
+  .stat-sep{height:16px;}
+}
 
 .scroll-hint{position:absolute;bottom:clamp(16px,3.5vh,28px);left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:6px;z-index:2;
