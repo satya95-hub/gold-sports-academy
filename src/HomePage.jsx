@@ -107,7 +107,7 @@ html{scroll-behavior:smooth;}
 .hp-stat-sep{width:1px;min-width:1px;height:28px;background:rgba(184,122,0,.35);
   flex-shrink:0;align-self:center;display:block;}
 @media(max-width:480px){
-  .hp-stat{padding:0 clamp(6px,2.5vw,20px);}
+  .hp-stat{padding:0 clamp(10px,3.5vw,24px);}
   .hp-stat-n{font-size:clamp(16px,4.5vw,24px);letter-spacing:-.5px;}
   .hp-stat-l{font-size:clamp(7px,2vw,9px);letter-spacing:.5px;}
   .hp-stat-sep{height:22px;}
