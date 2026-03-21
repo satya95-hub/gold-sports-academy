@@ -51,6 +51,9 @@ html{scroll-behavior:smooth;}
   align-items:center;justify-content:center;position:relative;overflow:visible;
   padding:clamp(100px,14vh,140px) clamp(24px,5vw,80px) clamp(110px,16vh,150px);
   background:linear-gradient(160deg,#fdf9f0 0%,#faf6ed 40%,#f5f0e8 100%);}
+@media(max-width:480px){
+  .hp-hero{padding-top:80px;padding-bottom:80px;}
+}
 .hp-hero::before{content:'';position:absolute;inset:0;
   background-image:radial-gradient(circle at 20% 20%,rgba(232,168,0,.06) 0%,transparent 50%),
     radial-gradient(circle at 80% 80%,rgba(0,130,180,.04) 0%,transparent 50%);
@@ -102,7 +105,7 @@ html{scroll-behavior:smooth;}
   letter-spacing:-1px;line-height:1;white-space:nowrap;}
 .hp-stat-l{font-size:clamp(8px,.85vw,10px);font-weight:500;letter-spacing:1px;
   text-transform:uppercase;color:rgba(26,18,0,.35);margin-top:4px;white-space:nowrap;}
-.hp-stat-sep{width:1px;height:28px;background:rgba(184,122,0,.2);flex-shrink:0;align-self:center;}
+.hp-stat-sep{width:1px;min-width:1px;height:28px;background:rgba(184,122,0,.2);flex-shrink:0;align-self:center;}
 @media(max-width:400px){
   .hp-stat{padding:0 4px;}
   .hp-stat-n{font-size:15px;letter-spacing:-.5px;}
