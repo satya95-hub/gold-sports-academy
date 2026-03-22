@@ -950,7 +950,7 @@ export default function App(){
           <p>Join 300+ swimmers at Gold Sports Academy, Kengeri, Bangalore</p>
           <div className="cta-meta">
             <div className="cta-item">📍 No.25, Near Bandematt Arch, BSM Layout, Kengeri</div>
-            <div className="cta-item">📞 9148873516 / 91488867178</div>
+            <div className="cta-item">📞 9148873516 / 9148867178</div>
             <div className="cta-item">🕕 Daily 6:00 AM – 8:00 PM</div>
           </div>
           <a href="tel:9148873516" className="enroll">📞 Enroll Now</a>
